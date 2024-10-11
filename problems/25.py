@@ -18,7 +18,6 @@ def train_neuron(features: np.ndarray, labels: np.ndarray, initial_weights: np.n
         _dsl = d_sig(label_preds) * d_mse(label_preds, labels)
         dw = (_dsl @ features) / features.shape[0]
         db = _dsl.sum() / features.shape[0]
-        print(dw, db)
 
         updated_weights -= learning_rate * dw
         updated_bias -= learning_rate * db
